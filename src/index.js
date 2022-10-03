@@ -28,7 +28,7 @@ input.addEventListener(
             Notiflix.Notify.failure('Oops, there is no country with that name');
           } else if (foundCountry.length >= 2 && foundCountry.length <= 10) {
             renderCountryList(foundCountry);
-          } else if (foundCountry) {
+          } else {
             renderOneCountry(foundCountry);
           }
         });
