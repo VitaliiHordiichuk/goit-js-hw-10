@@ -16,7 +16,7 @@ input.addEventListener(
     const inputValue = input.value.trim();
 
     if (inputValue === '') {
-      countryList.innerHTML = '';
+      cleanHtml();
     } else {
       if (inputValue !== '') {
         fetchCountries(inputValue).then(foundCountry => {
@@ -47,6 +47,7 @@ function renderCountryList(countries) {
     })
     .join('');
   countryList.innerHTML = infoCountry;
+  countryInfo.innerHTML = '';
 }
 
 function renderOneCountry(countries) {
@@ -64,4 +65,9 @@ function renderOneCountry(countries) {
     .join('');
   countryList.innerHTML = '';
   countryInfo.innerHTML = infoCountry;
+}
+
+function cleanHtml() {
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
 }
